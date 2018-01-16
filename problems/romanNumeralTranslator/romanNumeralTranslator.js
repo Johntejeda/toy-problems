@@ -28,6 +28,17 @@ var DIGIT_VALUES = {
 
 var translateRomanNumeral = function(romanNumeral) {
 // TODO: Implement me!
-/* START SOLUTION */
+function romanize (num) {
+    if (!+num)
+        return NaN;
+    var digits = String(+num).split("");
+        key = ["I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":100];
+
+        roman = "";
+        i = 3;
+    while (i--)
+        roman = (key[+digits.pop() + (i * 7)] || "") + roman;
+    return Array(+digits.join("") + 1).join("M") + roman;
+}
   /* END SOLUTION */
 };
